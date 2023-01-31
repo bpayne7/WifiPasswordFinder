@@ -1,4 +1,11 @@
-@echo PASSWORDS WILL BE SAVED IN FoundPasswords.txt
+:: Made by Brian Payne
+:: Email PayneBrianDouglas@gmail.com for questions or comments 
+
+@echo off
+title WifiPassword Finder
+cls
+@echo Show All Saved Passwords On Local Machine
+@echo PASSWORDS WILL BE SAVED IN CURRENT DIRECTORY AS FoundPasswords.txt
 
 rem delete FoundPasswords.txt if there is one
 IF EXIST "FoundPasswords.txt" del FoundPasswords.txt
@@ -42,10 +49,18 @@ for /l %%k in (1,1,!count!) do (
 	netsh wlan show profile name="!array[%%k]!" key=clear | findstr Content 
 	netsh wlan show profile name="!array[%%k]!" key=clear | findstr Content>>FoundPasswords.txt
 	@echo. >>FoundPasswords.txt
-	
 	)
+
 @echo.
-@echo PASSWORDS WILL BE SAVED IN FoundPasswords.txt in this directory
+@echo SHOW ALL SAVED PASSWORDS ON LOCAL MACHINE
+@echo PASSWORDS WILL BE SAVED IN CURRENT DIRECTORY AS FoundPasswords.txt
+@echo. 
+@echo Wanna buy the developer a coffee? Thanks^^!
 @echo.
-	
-timeout 10
+@echo  Venmo: @Brian-Payne-11
+@echo.
+@echo PayPal: @brianpayne1413
+@echo.
+@echo.
+rem timeout 20
+pause
